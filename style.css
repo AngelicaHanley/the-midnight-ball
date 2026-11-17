@@ -1,0 +1,10 @@
+body {
+    font-family: Helvetica, Arial, Verdana, sans-serif;
+    min-height: 100vh;
+    color: lightskyblue;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    background-color: ivory;
+}
