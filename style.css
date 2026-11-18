@@ -107,7 +107,7 @@ footer {
 
 @media screen and (max-width: 1000px) {
     h1{
-        font-size: 5.5vh;
+        font-size: 5vh;
         text-align: center;
     }
     .sceneTitle{
@@ -123,6 +123,7 @@ footer {
     }
     .gameTitle {
         margin: 50px 15px 15px 15px;
+        gap: 5px;
     }
     .choiceButton, .playAgainButton{
         padding: 8px 8px;
