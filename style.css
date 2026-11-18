@@ -110,6 +110,7 @@ h1 {
     }
     .game {
         margin: 10px auto 5px auto;
+        max-width: 65%
     }
     .gameTitle {
         margin: 50px 15px 15px 15px;
