@@ -102,9 +102,11 @@ const story = [
 
     {
         title: "The Secret Royal Connection",
-        text:   `As the palace clock strikes midnight, you approach the queen with the mysterious letter. The queen examines it carefully before looking at you in astonishment. She reveals that your grandmother belonged to a distant branch of the royal family, a connection that had been kept secret for generations due to a long-forgotten family scandal. You are a descendant of royalty! 
-
-                With this being revealed, the queen welcomes you as a newly discovered member of the royal family. Across the ballroom, your mother looks completely speechless for the first time all evening. You arrived at the Midnight Ball expecting a night of dancing, but instead discovered a royal secret about your own family. Perhaps you were destined for royalty after all. THE END!`,
+        text:   `As the palace clock strikes midnight, you approach the queen with the mysterious letter. The queen examines it carefully before looking at you in astonishment. She reveals that your grandmother belonged to a distant branch of the royal family, a connection that had been kept secret for generations due to a long-forgotten family scandal. 
+        
+                You are a descendant of royalty! With this being revealed, the queen welcomes you as a newly discovered member of the royal family. Across the ballroom, your mother looks completely speechless for the first time all evening. 
+                
+                You arrived at the Midnight Ball expecting a night of dancing, but instead discovered a royal secret about your own family. Perhaps you were destined for royalty after all. THE END!`,
         choices: []
     }
 ];
