@@ -1,5 +1,14 @@
+button {
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
 body {
-    font-family: Helvetica, Arial, Verdana, sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     min-height: 100vh;
     margin: 0px;
     padding: 0px;
@@ -18,10 +27,19 @@ main {
 
 h1 {
     color: ivory;
+    font-size: 8vh;
+    margin: 0px;
 }
 
-h2 {
-    margin: 15px;
+.gameTitle{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 70px;
+    gap: 10px;
+    margin: 30px 15px;
 }
 
 .game {
@@ -29,34 +47,81 @@ h2 {
     color: #14213D;
     display: flex;
     flex-direction: column;
-    margin: 20px auto;
+    margin: 40px auto 15px auto;
     justify-content: center;
     align-items: center;
-    max-width: 80%;
+    max-width: 50%;
     border-radius: 20px;
-    padding: 20px;
     border: 4px solid #C5A46D;
-}
-
-.game p{
-    color:hsl(221, 51%, 16%)
+    padding: 15px 40px;
 }
 
 .sceneTitle {
-    
+    font-size: 4.5vh;
 }
 
 .storyText {
-    color: black;
-    border-top: 2px solid hsl(221, 51%, 16%);
-    padding-top: 30px;
+    color:hsl(221, 51%, 16%);
+    border-top: 2.5px solid #C5A46D;
+    line-height: 1.6;
+    white-space: pre-line;
+    padding: 30px 0px;
+    font-size: 2.5vh;
+    margin: 0px auto 10px auto;
 }
+
 .choices {
     color: black;
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 15px;
 }
-.choiceButton {
-    padding: 8px;
+.choiceButton, .playAgainButton{
+    padding: 15px 7px;
+    background-color: hsl(221, 51%, 16%);
+    color: ivory;
+    border-radius: 20px;
+    border: 4px solid #C5A46D;
+}
+
+.playAgainButton {
+    background-color: hsl(221, 40%, 54%);
+    color: ivory;
+    min-width: 150px;
+    font-weight: bold;
+}
+
+.starIcon {
+    width: 30px;
+    height: 30px;
+}
+
+@media screen and (max-width: 1000px) {
+    h1{
+        font-size: 6vh;
+    }
+    .sceneTitle{
+        font-size: 3vh;
+    }
+    .storyText{
+        font-size: 2vh;
+        padding: 15px 0px;
+    }
+    .game {
+        margin: 10px auto 5px auto;
+    }
+    .gameTitle {
+        margin: 50px 15px 15px 15px;
+    }
+    .choiceButton, .playAgainButton{
+        padding: 6px 6px;
+    }
+    .choiceButton, .playAgainButton{
+        padding: 8px 8px;
+        font-size: 2vh;
+    }
+}
+
+@media screen and (max-width: 450px) {
 }
