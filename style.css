@@ -39,7 +39,11 @@ h1 {
     margin: 0px;
 }
 
-.gameTitle{
+.gameDescription {
+    margin: 15px 0px 10px 0px;
+}
+
+.gameTitle {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -55,7 +59,7 @@ h1 {
     color: #14213D;
     display: flex;
     flex-direction: column;
-    margin: 40px auto 15px auto;
+    margin: 20px auto 15px auto;
     justify-content: center;
     align-items: center;
     max-width: 50%;
