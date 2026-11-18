@@ -91,18 +91,18 @@ const story = [
     },
     {
         title: "The Royal Library",
-        text:   `You finally escape the crowded ballroom and wander into a new hallway of the palace. Looking for a quiet spot, you enter the royal library. As you admire the room, you notice an old portrait of a young woman who looks a lot like your mother. Under the portrait, you notice a faded inscription with your grandmother's name. 
-                
-                As you take a closer look, you discover a letter tucked behind the portrait. The letter reveals that your grandmother belonged to a distant branch of the royal family! With midnight approaching, you must decide what to do with this shocking discovery.`,
+        text:   `You finally escape the crowded ballroom and wander into a new hallway of the palace. Looking for a quiet spot, you enter the royal library. As you admire the room, you notice an old portrait of a young woman who looks a lot like your mother. Under the portrait, you notice a faded inscription with your grandmother's name.
+            
+                Curious, you begin searching through the library's collection of family records. You discover an old family tree revealing that your grandmother belonged to a distant branch of the royal family! With midnight approaching, you must decide what to do with this shocking discovery.`,
         choices: [
-            { text: "Bring the letter to the queen and reveal the secret.", nextScene: 10 },
+            { text: "Bring the family tree to the queen and reveal the secret.", nextScene: 10 },
             { text: "Keep the family secret and investigate the necklace rumors instead.", nextScene: 3 }
         ]
     },
 
     {
         title: "The Secret Royal Connection",
-        text:   `As the palace clock strikes midnight, you approach the queen with the mysterious letter. The queen examines it carefully before looking at you in astonishment. She reveals that your grandmother belonged to a distant branch of the royal family, a connection that had been kept secret for generations due to a long-forgotten family scandal. 
+        text:   `As the palace clock strikes midnight, you approach the queen with the old family tree. The queen examines it carefully before looking at you in astonishment. She reveals that your grandmother belonged to a distant branch of the royal family, a connection that had been kept secret for generations due to a long-forgotten family scandal. 
         
                 You are a descendant of royalty! With this being revealed, the queen welcomes you as a newly discovered member of the royal family. Across the ballroom, your mother looks completely speechless for the first time all evening. 
                 
