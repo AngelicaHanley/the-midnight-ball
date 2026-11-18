@@ -7,7 +7,7 @@ const story = [
                 Your mother has spent the entire carriage ride reminding you to behave like a proper young lady. 
                 She is determined to find you a suitable husband before the Midnight Ball ends. 
                 As you enter the ballroom, your mother spots a wealthy gentleman she insists you must meet. 
-                However, a mysterious stranger who catches your eye is walking in your direction, and the moonlit palace gardens look particularly inviting. 
+                However, a mysterious stranger catches your eye as he approaches you.
                 What will you do?`,
         choices: [
             { text: "Accept a dance with the mysterious stranger.", nextScene: 1 },
@@ -17,14 +17,15 @@ const story = [
 
     {
         title: "The Mysterious Stranger",
-        text:   `You escape your mother's matchmaking attempts when a charming gentleman approaches you.
+        text:   `Before your mother can introduce you to another gentleman, the mysterious stranger approaches you.
                 "Would you honor me with a dance, my lady?" You accept, and the two of you spend the dance laughing and talking. 
                 Unlike the other gentlemen at the ball, he seems remarkably uninterested in discussing his background or family connections.
                 As the music ends, he invites you for a walk through the palace gardens.
                 Unfortunately, you spot your mother approaching you. What will you do?`,
         choices: [
             { text: "Accept his invitation to the gardens.", nextScene: 4 },
-            { text: "Politely decline and return to your mother.", nextScene: 2 }
+            { text: "Politely decline and return to your mother.", nextScene: 2 },
+            { text: "Excuse yourself and escape to the royal library.", nextScene: 9 }
         ]
     },
     {
@@ -40,25 +41,25 @@ const story = [
     },
     {
         title: "The Palace Gardens",
-        text:   `You escape the crowded ballroom and walk into the moonlit palace gardens.
-                The evening air is a welcome relief from the endless conversations about marriage.
+        text:   `You wander through the moonlit palace gardens, enjoying the fresh evening air and a welcome escape from the endless conversations about marriage.
                 As you wander along the flowered pathways, you notice something unusual: a doorway hidden behind a stone fountain.
-                You remember hearing the rumors about the queen's missing diamond necklace.
+                You remember hearing rumors earlier about the queen's missing diamond necklace.
                 Could the doorway be hiding something important? What will you do?`,
         choices: [
-            { text: "Investigate the mysterious doorway.", nextScene: 6 },
+            { text: "Investigate the mysterious doorway.", nextScene: 6 }
         ]
     },
     {
         title: "A Walk in the Gardens",
         text:   `You accept the mysterious gentleman's invitation, and together you wander through the moonlit gardens.
                 He admits that he rarely enjoys an evening without everyone needing something from him.
-                Before you can ask what he means, the palace bells begin to ring, meaning that midnight is approaching.
+                Before you can ask what he means, the palace bells begin to ring in the distance.
                 "I'm afraid I must return to the ballroom," he says, looking disappointed.
                 He promises that you will see him again before the evening is over.
-                Curious about his sudden departure, you follow him back inside.`,
+                With midnight approaching, will you follow the mysterious gentleman or explore the gardens on your own?`,
         choices: [
-            { text: "Return to the ballroom for the royal announcement.", nextScene: 5 }
+            { text: "Return to the ballroom for the royal announcement.", nextScene: 5 },
+            { text: "Stay behind and explore the palace gardens.", nextScene: 3 }
         ]
     },
     {
@@ -105,13 +106,13 @@ const story = [
     },
     {
         title: "The Royal Library",
-        text:   `You finally escape Lord Bash and wander into a new hallway of the palace.
+        text:   `You finally escape the crowded ballroom and wander into a new hallway of the palace.
                 Looking for a quiet spot, you enter the royal library.
                 As you admire the room, you notice an old portrait of a young woman who looks a lot like your mother.
                 Under the portrait, you notice a faded inscription with your grandmother's name.
                 As you take a closer look, you discover a letter tucked behind the portrait.
                 To your surprise, the letter reveals that your grandmother belonged to a distant branch of the royal family!
-                With midnight approaching, you must decide what to do with this shocking information. What will you do?`,
+                With midnight approaching, you must decide what to do with this shocking discovery.`,
         choices: [
             { text: "Bring the letter to the queen and reveal the secret.", nextScene: 10 },
             { text: "Keep the family secret and investigate the necklace rumors instead.", nextScene: 3 }
@@ -129,6 +130,85 @@ const story = [
                 Perhaps you were destined for royalty after all! THE END`,
         choices: []
     }
-
-
 ];
+
+// ! PLAN: Game Structures !
+//Track the current scene
+//Create function to start the game
+
+//Create function to display current scene
+//Create function to update scene title, text, and options
+//Update choices (buttons) helper
+//Create function to handle user selections
+
+//Create function to check if the scene is an ending (so the last scene with no choices)
+//Create function to restart the game
+//Display Play Again button when the game ends
+
+let currentScene = 0
+const sceneTitle = document.querySelector(".sceneTitle")
+const storyText = document.querySelector(".storyText")
+const choices = document.querySelector(".choices")
+
+function startGame() {
+    currentScene = 0
+    displayScene()
+}
+
+function displayScene() {
+    updateSceneComponents()
+    if(isGameOver()){
+        //display play again button
+        createPlayAgainButton()
+    } else {
+        updateChoices()
+    }
+}
+
+function updateSceneComponents() {
+    sceneTitle.textContent = story[currentScene].title
+    storyText.textContent = story[currentScene].text
+}
+
+function updateChoices() {
+    //reset button html
+    choices.innerHTML = ""
+    //create choice buttons (depending on number of choices)
+    story[currentScene].choices.forEach(choice => {
+        const button = document.createElement("button")
+        button.textContent = choice.text
+        button.classList.add("choiceButton")
+        //choices event listener
+        button.addEventListener("click", () => {
+            updateScene(choice.nextScene)
+        })
+        choices.appendChild(button);
+    });
+}
+
+function updateScene(nextScene){
+    currentScene= nextScene
+    displayScene()
+}
+
+function isGameOver() {
+    let gameOver = false
+    if (story[currentScene].choices.length === 0){
+        gameOver = true
+    }
+    return gameOver
+}
+
+function createPlayAgainButton() {
+    choices.innerHTML = ""
+    const playAgainButton = document.createElement("button")
+    playAgainButton.textContent = "Play Again"
+    playAgainButton.classList.add("playAgainButton")
+    choices.appendChild(playAgainButton);
+
+    playAgainButton.addEventListener("click", () => {
+        startGame()
+    })
+}
+
+startGame()

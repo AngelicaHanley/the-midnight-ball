@@ -1,10 +1,62 @@
 body {
     font-family: Helvetica, Arial, Verdana, sans-serif;
     min-height: 100vh;
-    color: lightskyblue;
     margin: 0px;
     padding: 0px;
     display: flex;
     flex-direction: column;
+    background-color: hsl(221, 51%, 16%);
+    color: #C5A46D;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: ivory;
+}
+
+h2 {
+    margin: 15px;
+}
+
+.game {
     background-color: ivory;
+    color: #14213D;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    max-width: 80%;
+    border-radius: 20px;
+    padding: 20px;
+    border: 4px solid #C5A46D;
+}
+
+.game p{
+    color:hsl(221, 51%, 16%)
+}
+
+.sceneTitle {
+    
+}
+
+.storyText {
+    color: black;
+    border-top: 2px solid hsl(221, 51%, 16%);
+    padding-top: 30px;
+}
+.choices {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.choiceButton {
+    padding: 8px;
 }
