@@ -4,8 +4,7 @@ const story = [
         title: "Arrival at the Royal Ball",
         text: `It is the most anticipated evening of the season, and you have arrived at the royal palace with your family. Your mother has spent the entire carriage ride reminding you to behave like a proper young lady. 
         
-                She is determined to find you a suitable husband before the Midnight Ball ends. As you enter the ballroom, your mother spots a wealthy gentleman she insists you must meet. 
-                However, a mysterious stranger catches your eye as he approaches you. What will you do?`,
+                She is determined to find you a suitable husband before the Midnight Ball ends. As you enter the ballroom, your mother spots a wealthy gentleman she insists you must meet.  However, a mysterious stranger catches your eye as he approaches you. What will you do?`,
         choices: [
             { text: "Accept a dance with the mysterious stranger.", nextScene: 1 },
             { text: "Listen to your mother and meet the wealthy gentleman.", nextScene: 2 },
